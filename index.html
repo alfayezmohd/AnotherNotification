@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PWA FCM Test</title>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content" />
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="192x192" href="icon192.png">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFF" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
+<style type="text/css">
+:root {
+	--primary-background: #FFF;
+	--primary-foreground: #000;
+}
+
+@media ( prefers-color-scheme : dark) {
+	:root {
+		--primary-background: #000;
+		--primary-foreground: #FFF;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	font-family: "SF Pro Text", "Segoe UI", SegoeUI, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	overscroll-behavior: none;
+	-webkit-overflow-scrolling: touch;
+}
+
+body {
+	height: 100%;
+	background: var(--primary-background);
+	color: var(--primary-foreground);
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+input {
+	font-size: 1rem;
+	padding: 0.5rem;
+	outline: none;
+	border: 1px solid var(--primary-foreground);
+	border-radius: 0px;
+	background: none;
+	color: var(--primary-foreground);
+}
+
+button {
+	font-size: 1rem;
+	padding: 0.5rem;
+	outline: none;
+	border: 1px solid var(--primary-foreground);
+	border-radius: 0px;
+	background: none;
+	color: var(--primary-foreground);
+}
+</style>
+</head>
+<body>
+	<input id="textfield" type="text" placeholder="Your notification token goes here">
+	<button onclick="subscribe()">Generate Token</button>
+	<script src='script.js'></script>
+</body>
+</html>
